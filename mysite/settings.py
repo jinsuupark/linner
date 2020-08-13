@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'cp#vk2n8gp3!-ohv=$-gh=#@&t&nu0uj4h2#$f*@#5876gza9^'
+SECRET_KEY = 'fxeug^e(z6fg85%8-wf&s@3jjgn-!wi960zk7tr9@@#*+4%ij^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,7 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'home',
+
+    'hotplace.apps.HotplaceConfig',
+
+    'tinymce',
+    'taggit.apps.TaggitAppConfig',
+    'taggit_templatetags2',
+
+
+
 ]
 
 MIDDLEWARE = [
@@ -56,7 +64,9 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'), ],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,12 +84,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-#
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'linner_db',
-        'HOST': 'localhost',#'192.168.56.1',#'192.168.0.29',
+        'HOST':'192.168.0.29',
         'PORT':'3306',
         'USER':'linneruser',
         'PASSWORD':'1234',
@@ -108,13 +118,28 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
+
 LANGUAGE_CODE = 'ko'
 
 TIME_ZONE = 'Asia/Seoul'
+
+USE_I18N = True
+
+USE_L10N = True
+
 USE_TZ = False
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-# 프로젝트 디렉토리 밑에 있다
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/3.1/howto/static-files/
+
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+TAGGIT_CASE_INSENSITIVE =True
+TAGGIT_LIMIT = 50
+
 
