@@ -10,9 +10,7 @@
   box-sizing:border-box;
   font-family:"Bree Serif",sans-serif;
 }
-body {
-  overflow:hidden;
-}
+
 #sidebar {
   position:absolute;
   top:0px;
@@ -88,7 +86,7 @@ body {
 <div id="sidebar">
     <ul>
         <a type="button">My Page</a>
-        <a type="button">Recipe</a>
+        <a type="button" href="{% url 'recipe:recipe_listview' %}">Recipe</a>
         <a type="button">Hot Place</a>
         <a type="button">My Pick</a>
     </ul>
@@ -98,9 +96,7 @@ body {
     <span></span>
     <span></span>
 </div>
-    <img alt="logo" style="margin-left:130px;" src="{% static 'images/linner.png' %}" type="button">
-
-
+    <img alt="logo" href="{% url 'home' %}" style="margin-left:130px;" src="{% static 'images/linner.png' %}" type="button">
 
 </div>
 
