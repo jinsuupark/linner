@@ -23,6 +23,7 @@ urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('recipe/', include('recipe.urls')),
     path('hotplace/', include('hotplace.urls')),
+    path('user/', include('user.urls')),
 
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/signup/', UserCreateView.as_view(), name='signup'),

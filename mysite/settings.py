@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'recipe.apps.RecipeConfig',
     'hotplace.apps.HotplaceConfig',
 
+    'user',
+
 ]
 
 LOGIN_REDIRECT_URL = '/'
