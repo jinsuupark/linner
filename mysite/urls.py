@@ -18,15 +18,10 @@ from django.urls import path
 from mysite.views import HomeView
 from django.conf.urls import include
 
-from recipe.views import YoutubeContent, RecipeContent
-from django.conf.urls.static import static
-from django.conf import settings
-
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomeView.as_view(), name='home'),
     path('recipe/', include('recipe.urls')),
+    path('hotplace/', include('hotplace.urls')),
 
 ]
