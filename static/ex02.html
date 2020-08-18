@@ -1,0 +1,17 @@
+<div id="image-panel">
+    <img src="/static/images/linner.png" width="200px">
+    <img src="/static/images/stars.png" width="200px">
+    <img src="/static/images/universe.jpg" width="200px">
+</div>
+
+<script>
+    let imagePanel = document.getElementById("image-panel")
+
+    function scrollImage(){
+        let image = imagePanel.getElementsByTagName("img")[0]
+        image.remove()
+        imagePanel.append(image)
+    }
+
+    setInterval(scrollImage,2000);
+</script>

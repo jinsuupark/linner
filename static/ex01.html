@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="image" src='/static/images/linner.png' width='400px'>
+    <br>
+    <br>
+
+    <button id='prevBtn'>이전</button>
+    <button id='nextBtn'>다음</button>
+</body>
+<script>
+    let images=[
+        "/static/images/linner.png",
+        "/static/images/stars.png",
+        "/static/images/universe.jpg",
+    ]
+    let cur = 0;
+    let img = document.getElementById("image")
+    var n = document.getElementById("nextBtn")
+
+    n.addEventListener("click",function(){
+        ++cur;
+        if(cur ==images.length){
+            cur=0;
+        }
+        img.src=images[cur];
+      
+    });
+
+</script>
+
+
+</html>
